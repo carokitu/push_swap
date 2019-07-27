@@ -6,7 +6,7 @@
 #    By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/18 13:45:49 by cde-moul          #+#    #+#              #
-#    Updated: 2019/07/25 03:09:31 by cde-moul         ###   ########.fr        #
+#    Updated: 2019/07/27 11:55:42 by cde-moul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS2			=	main_push.c \
 					push_tri.c \
 					push_mediane.c \
 					push_start.c \
-					push_loop.c \
+					push_loopbis.c \
 					push_loop2.c \
 					push_step.c \
 					push_check.c

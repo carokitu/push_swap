@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 12:02:04 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/25 03:11:05 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/25 00:14:42 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void				ps_mediane(t_push *swp);
 void				ps_medianeb(t_push *swp,int moves);
 void				ps_step2(t_push *swp);
 void				ps_loop(t_push *swp, int *mv);
-void				ps_loop2(t_push *swp, int *tab, int a);
+void				ps_loopa(t_push *swp, int *mv, int a);
 void				ps_printelse(int *tab, t_push *all);
 void				ps_tmptri(int *tab, t_push *swp);
 void				ps_freesave(char **save, int to_free);
