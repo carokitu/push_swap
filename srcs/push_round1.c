@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:14:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 19:34:35 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 19:50:35 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static void	ps_firstmediane(t_push *swp, t_move *lst)
 {
 	int med;
 
-	while (ps_quick_check(swp) == 1 && swp->a_nbr >= 3) 
+	while (ps_quick_check(swp) == 1 && swp->a_nbr >= 3)
 	{
 		med = swp->fina[swp->a_nbr / 2];
 		while (lst->moves != 0 && lst->next)
@@ -112,7 +112,7 @@ void		ps_round1(t_push *swp)
 	t_move	*fre;
 
 	if (!(lst = (t_move *)ft_memalloc(sizeof(t_move))))
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	ps_tmptri(swp->a_tab, swp);
 	ps_firstmediane(swp, lst);
 	ps_printlist(lst);

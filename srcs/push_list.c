@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:34:09 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 19:15:00 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 19:36:13 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ps_newlist(t_move *lst)
 	t_move	*new;
 
 	if (!(new = (t_move *)ft_memalloc(sizeof(t_move))))
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	while (lst->next)
 		lst = lst->next;
 	new->nb = lst->nb + 1;

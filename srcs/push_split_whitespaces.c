@@ -6,10 +6,11 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 21:09:59 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 17:22:30 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 19:49:45 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdlib.h>
 
 static int		ft_nbrmot(char *str)
@@ -34,7 +35,7 @@ static int		ft_nbrmot(char *str)
 	return (i);
 }
 
-static char		*ft_strcpy(char *dest, char *src)
+static char		*ft_strcpie(char *dest, char *src)
 {
 	int i;
 
@@ -73,16 +74,23 @@ static int		ft_nbrlettre(char *str)
 	return (i);
 }
 
+static void		ps_split2(char *str, int *k)
+{
+	while (str[*k] != '\0' && str[*k] != '\t' &&
+			str[*k] != ' ' && str[*k] != '\n')
+		(*k)++;
+}
+
 char			**ps_split_whitespaces(char *str)
 {
 	int		i;
 	int		k;
 	char	**tab;
 
-	i = 0;
+	i = -1;
 	k = 0;
-	if (!(tab = (char **)malloc(sizeof(char *) * (ft_nbrmot(str) + 1))))
-		exit (EXIT_FAILURE);
+	if (!(tab = (char **)ft_memalloc(sizeof(char *) * (ft_nbrmot(str) + 1))))
+		exit(EXIT_FAILURE);
 	while (str[k] != '\0')
 	{
 		while ((str[k] != '\0') && (str[k] == '\t' || str[k] == '\n'
@@ -90,17 +98,13 @@ char			**ps_split_whitespaces(char *str)
 			k++;
 		if (str[k] != '\t' && str[k] != ' ' && str[k] != '\n' && str[k] != '\0')
 		{
-			if (!(tab[i] = (char *)malloc(sizeof(char) *
+			if (!(tab[++i] = (char *)malloc(sizeof(char) *
 							(ft_nbrlettre(str + k) + 1))))
-				exit (EXIT_FAILURE);
-			tab[i] = ft_strcpy(tab[i], str + k);
-			i++;
+				exit(EXIT_FAILURE);
+			tab[i] = ft_strcpie(tab[i], str + k);
 			k++;
 		}
-		while (str[k] != '\0' && str[k] != '\t' &&
-				str[k] != ' ' && str[k] != '\n')
-			k++;
+		ps_split2(str, &k);
 	}
-	tab[i] = NULL;
 	return (tab);
 }
