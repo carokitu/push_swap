@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 03:37:00 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/22 16:29:15 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:40:42 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,16 @@ static char		**ps_newnew(char **old, char **small)
 	while (small[++i])
 		size++;
 	if (!(new = (char **)malloc(sizeof(char *) * (size + 1))))
-		return (NULL);
+		exit (EXIT_FAILURE);
 	i = -1;
 	size = 0;
 	while (old[++i])
-		new[size++] = ft_strdup(old[i]);
+		if (!(new[size++] = ft_strdup(old[i])))
+			exit (EXIT_FAILURE);
 	i = -1;
 	while (small[++i])
-		new[size++] = ft_strdup(small[i]);
+		if (!(new[size++] = ft_strdup(small[i])))
+			exit (EXIT_FAILURE);
 	new[size] = NULL;
 	ps_freesave(old, 1);
 	ps_freesave(small, 1);

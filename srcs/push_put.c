@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 15:30:10 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/22 15:15:38 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:21:31 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ int					ps_putintab(t_push *all, char **argv, int size)
 	a = 0;
 	i = 0;
 	if (!(b = (int *)ft_memalloc(sizeof(int) * (size + 1))))
-		return (1);
+		exit (EXIT_FAILURE);
 	all->a_tabon = 1;
 	if (!(all->b_tab = (int *)ft_memalloc(sizeof(int) * (size + 1))))
-		return (1);
+		exit (EXIT_FAILURE);
 	all->b_tabon = 1;
 	while (argv[i])
 		i++;

@@ -6,7 +6,7 @@
 #    By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/18 13:45:49 by cde-moul          #+#    #+#              #
-#    Updated: 2019/07/27 11:55:42 by cde-moul         ###   ########.fr        #
+#    Updated: 2019/07/27 18:46:13 by cde-moul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,22 +32,18 @@ SRCS1			=	main_checker.c \
 					push_print.c
 
 SRCS2			=	main_push.c \
-					push_order.c \
-					push_print.c \
-					push_split_whitespaces.c \
 					push_put.c \
-					push_pa.c \
+					push_print.c \
+					push_order.c \
+					push_round1.c \
+					push_list.c \
+					push_tri.c \
 					push_r.c \
+					push_pa.c \
 					push_ss.c \
 					push_rr.c \
-					push_tri.c \
-					push_mediane.c \
-					push_start.c \
-					push_loopbis.c \
-					push_loop2.c \
-					push_step.c \
-					push_check.c
-
+					push_check.c \
+					push_split_whitespaces.c \
 
 OBJS1			=	$(addprefix $(OBJSDIR)/, $(SRCS1:.c=.o))
 
@@ -55,7 +51,7 @@ OBJS2			=	$(addprefix $(OBJSDIR)/, $(SRCS2:.c=.o))
 
 CC				=	gcc -g
 
-CFLAG			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror
 
 INCL			=	-I includes/ -I libft/ -I libft/libft
 
@@ -66,17 +62,17 @@ LIB				=	libft/libft.a
 all				:	libft $(NAME1) $(NAME2)
 
 $(NAME1)		:	$(OBJS1) $(LIB) $(INCLUDES)
-					$(CC) $(CFLAG) $(INCL) $(OBJS1) $(LIB) -o $(NAME1)
+					$(CC) $(CFLAGS) $(INCL) $(OBJS1) $(LIB) -o $(NAME1)
 
 $(NAME2)		:	$(OBJS2) $(LIB) $(INCLUDES)
-					$(CC) $(CFLAG) $(OBJS2) $(LIB) -o $(NAME2)
+					$(CC) $(CFLAGS) $(OBJS2) $(LIB) -o $(NAME2)
 
 $(LIB)			:
 					make -C libft/
 
 $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c $(INCLUDES)
 					mkdir -p $(OBJSDIR)
-					$(CC) -c $(CFLAG) $(INCL) -c $< -o $@
+					$(CC) -c $(CFLAGS) $(INCL) -c $< -o $@
 
 libft			:
 					make -C libft/

@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/17 21:09:59 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/18 17:44:51 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:22:30 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ char			**ps_split_whitespaces(char *str)
 
 	i = 0;
 	k = 0;
-	tab = (char **)malloc(sizeof(char *) * (ft_nbrmot(str) + 1));
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_nbrmot(str) + 1))))
+		exit (EXIT_FAILURE);
 	while (str[k] != '\0')
 	{
 		while ((str[k] != '\0') && (str[k] == '\t' || str[k] == '\n'
@@ -89,7 +90,9 @@ char			**ps_split_whitespaces(char *str)
 			k++;
 		if (str[k] != '\t' && str[k] != ' ' && str[k] != '\n' && str[k] != '\0')
 		{
-			tab[i] = (char *)malloc(sizeof(char) * (ft_nbrlettre(str + k) + 1));
+			if (!(tab[i] = (char *)malloc(sizeof(char) *
+							(ft_nbrlettre(str + k) + 1))))
+				exit (EXIT_FAILURE);
 			tab[i] = ft_strcpy(tab[i], str + k);
 			i++;
 			k++;
