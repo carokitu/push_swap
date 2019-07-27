@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:14:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 19:50:35 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/27 20:25:10 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void		ps_round1(t_push *swp)
 	ps_tmptri(swp->a_tab, swp);
 	ps_firstmediane(swp, lst);
 	ps_printlist(lst);
+	ps_round2(swp, lst);
 	free(swp->fina);
 	while (lst->next)
 		lst = lst->next;

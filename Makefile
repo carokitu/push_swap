@@ -6,7 +6,7 @@
 #    By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/18 13:45:49 by cde-moul          #+#    #+#              #
-#    Updated: 2019/07/27 19:50:33 by cde-moul         ###   ########.fr        #
+#    Updated: 2019/07/27 20:50:46 by cde-moul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,8 @@ SRCS2			=	main_push.c \
 					push_print.c \
 					push_order.c \
 					push_round1.c \
+					push_round2.c \
+					push_order_B.c \
 					push_list.c \
 					push_tri.c \
 					push_r.c \
