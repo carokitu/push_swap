@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 12:02:04 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 20:50:48 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/28 17:25:00 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,12 @@ int					ps_quick_check(t_push *swp);
 void				ps_round1(t_push *swp);
 void				ps_newlist(t_move *list);
 void				ps_firstlist(t_move *lst);
+void				ps_insertlist(t_move *lst);
 void				ps_tmptri(int *tab, t_push *swp);
 void				ps_round2(t_push *swp, t_move *lst);
-void				ps_order_B(t_push *swp, t_move *lst);
+void				ps_order_b(t_push *swp, t_move *lst);
+void				ps_order_a(t_push *swp, t_move *lst);
+void				ps_mediane_a(t_push *swp, t_move *lst, int med);
 
 /*
 **		USING PRINTF
