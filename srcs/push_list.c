@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:34:09 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/28 16:39:42 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/30 10:27:15 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void		ps_insertlist(t_move *lst)
 	new->nb = (bef->nb) + 1;
 	bef->next = new;
 	las->prev = new;
+	las->next = NULL;
 }
 
 void		ps_printlist(t_move *lst)

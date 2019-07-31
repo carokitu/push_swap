@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 20:07:47 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/28 17:24:57 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/30 11:38:14 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ static void	ps_orderbbis(t_push *swp)
 
 static void	ps_orderb(t_push *swp)
 {
+	if (ps_quick_check(swp) == 0)
+		return ;
 	if (swp->a_tab[swp->a_nbr] < swp->a_tab[swp->a_nbr - 1]
 			&& swp->a_tab[swp->a_nbr] > swp->a_tab[swp->a_nbr - 2]
 			&& swp->a_tab[swp->a_nbr - 1] > swp->a_tab[swp->a_nbr - 2])
@@ -80,6 +82,6 @@ void		ps_order_a(t_push *swp, t_move *lst)
 			ps_sa(swp);
 		}
 	}
-	else if (nb == 3)
+	else if (nb == 3 && ps_quick_check(swp) != 0)
 		ps_orderb(swp);
 }

@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:14:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/28 15:20:13 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/31 12:30:58 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ static void	ps_domedia(t_push *swp, int med, t_move *lst)
 		}
 		i--;
 	}
-	ps_print(swp);
 }
 
 static void	ps_firstmediane(t_push *swp, t_move *lst)
@@ -115,8 +114,11 @@ void		ps_round1(t_push *swp)
 		exit(EXIT_FAILURE);
 	ps_tmptri(swp->a_tab, swp);
 	ps_firstmediane(swp, lst);
-	ps_printlist(lst);
+//	puts("APRES ROUND 1 :");
+//	ps_print(swp);
+//	ps_printlist(lst);
 	ps_round2(swp, lst);
+//	printf("RES : %d\n", ps_quick_check(swp));
 	free(swp->fina);
 	while (lst->next)
 		lst = lst->next;

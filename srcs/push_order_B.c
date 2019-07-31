@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 15:42:48 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/28 16:08:11 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/30 14:21:32 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,27 @@ static void	ps_threepush(t_push *swp)
 
 static void	ps_orderter(t_push *swp)
 {
-	ft_putstr_fd("sb\npa\nsb\npa\npa\n", STDOUT_FILENO);
-	ps_sb(swp);
-	ps_pa(swp);
-	ps_sb(swp);
-	ps_pa(swp);
-	ps_pa(swp);
+	if (swp->b_tab[swp->b_nbr] < swp->b_tab[swp->b_nbr - 1]
+		&& swp->b_tab[swp->b_nbr - 1] < swp->b_tab[swp->b_nbr - 2]
+		&& swp->b_tab[swp->b_nbr] < swp->b_tab[swp->b_nbr - 2])
+	{
+		ft_putstr_fd("rb\nsb\npa\npa\nrrb\npa\n", STDOUT_FILENO);
+		ps_rb(swp);
+		ps_sb(swp);
+		ps_pa(swp);
+		ps_pa(swp);
+		ps_rrb(swp);
+		ps_pa(swp);
+	}
+	else
+	{
+		ft_putstr_fd("sb\npa\nsb\npa\npa\n", STDOUT_FILENO);
+		ps_sb(swp);
+		ps_pa(swp);
+		ps_sb(swp);
+		ps_pa(swp);
+		ps_pa(swp);
+	}
 }
 
 static void	ps_orderbbis(t_push *swp)
@@ -81,6 +96,15 @@ void		ps_order_b(t_push *swp, t_move *lst)
 	int		nb;
 
 	nb = lst->moves;
+	if (ps_checkb(swp, nb) == 0)
+	{
+		while (nb-- > 0)
+		{
+			ft_putstr_fd("pa\n", STDOUT_FILENO);
+			ps_pa(swp);
+		}
+		return ;
+	}
 	if (nb == 1)
 	{
 		ft_putstr_fd("pa\n", STDOUT_FILENO);

@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 02:01:30 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/22 17:58:34 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/07/30 10:44:13 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,19 @@ void			ps_printelse(int *tab, t_push *all)
 	while (--i >= 0)
 		printf("%7d | %13d | %13c |\n", i, tab[i], ' ');
 	printf("%7c --------------------------------\n", ' ');
+}
+
+void				ps_printmoves(t_move *lst)
+{
+	t_move *wlk;
+
+	wlk = lst;
+	while (wlk->prev)
+		wlk = wlk->prev;
+	while (wlk->next)
+	{
+		printf("%d) %d\n", wlk->nb, wlk->moves);
+		wlk = wlk->next;
+	}
+	printf("%d) %d\n", wlk->nb, wlk->moves);
 }
