@@ -6,7 +6,7 @@
 #    By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/07 14:42:46 by cde-moul          #+#    #+#              #
-#    Updated: 2019/06/04 14:14:28 by cde-moul         ###   ########.fr        #
+#    Updated: 2019/09/02 19:33:56 by cde-moul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIB = libft/libft.a
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) libftprintf.h
 	make -C libft
 	cp $(LIB) $(NAME)
 	ar -rc $(NAME) $(OBJS) $(LIB)
@@ -47,3 +47,5 @@ fclean : clean
 re	: 
 	make fclean
 	make all
+
+.PHONY	:	clean fclean re

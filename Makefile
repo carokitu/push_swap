@@ -6,7 +6,7 @@
 #    By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/18 13:45:49 by cde-moul          #+#    #+#              #
-#    Updated: 2019/09/02 18:08:40 by cde-moul         ###   ########.fr        #
+#    Updated: 2019/09/02 19:41:45 by cde-moul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,16 +63,13 @@ RM				=	rm -f
 
 LIB				=	libft/libft.a
 
-all				:	libft $(NAME1) $(NAME2)
+all				:	$(NAME1) $(NAME2)
 
-$(NAME1)		:	$(OBJS1) $(LIB) $(INCLUDES)
+$(NAME1)		:	libft $(OBJS1) $(INCLUDES)
 					$(CC) $(CFLAGS) $(INCL) $(OBJS1) $(LIB) -o $(NAME1)
 
-$(NAME2)		:	$(OBJS2) $(LIB) $(INCLUDES)
+$(NAME2)		:	libft $(OBJS2) $(INCLUDES)
 					$(CC) $(CFLAGS) $(OBJS2) $(LIB) -o $(NAME2)
-
-$(LIB)			:
-					make -C libft/
 
 $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c $(INCLUDES)
 					mkdir -p $(OBJSDIR)
@@ -93,4 +90,4 @@ re				:
 					make fclean
 					make all
 
-.PHONY			:	clean fclean re
+.PHONY			:	clean fclean re libft
