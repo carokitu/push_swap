@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 19:52:18 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/31 12:30:05 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:29:42 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ static void	ps_mediane_b(t_push *swp, t_move *lst)
 	lst = lst->next;
 	lst->next = NULL;
 	prev = lst->prev;
-//	printf("prev nb :%d\n", prev->nb);
-//	printf("lst nb :%d\n", lst->nb);
 	prev->moves = 0;
 	while (nb-- > 0)
 	{
@@ -58,20 +56,14 @@ static void	ps_mediane_b(t_push *swp, t_move *lst)
 		ft_putstr_fd("rrb\n", STDOUT_FILENO);
 		ps_rrb(swp);
 	}
-//	printf("prev value :%d\n", prev->moves);
-//	printf("lst value :%d\n", lst->moves);
 }
 
 static void	ps_manymoves(t_push *swp, t_move *lst)
 {
 	t_move	*old;
 
-//	printf("mediane B : %d\n", lst->moves);
 	ps_mediane_b(swp, lst);
-//	puts("APRES MEDIANE B :");
-//	ps_print(swp);
-//	ps_printmoves(lst);
-	while (lst->nb > 0)
+	while (lst->nb >= 0)
 	{
 		while (lst->next)
 			lst = lst->next;
@@ -79,8 +71,6 @@ static void	ps_manymoves(t_push *swp, t_move *lst)
 		{
 			if (ps_quick_check(swp) != 0)
 				ps_order_a(swp, lst);
-//			puts("APRES ORDER A");
-//			ps_print(swp);
 			if (lst->prev)
 			{
 				old = lst;
@@ -88,7 +78,8 @@ static void	ps_manymoves(t_push *swp, t_move *lst)
 				free(old);
 				lst->next = NULL;
 			}
-//			ps_printmoves(lst);
+			else
+				lst->moves = 0;
 			return ;
 		}
 		while (lst->prev)
@@ -98,9 +89,6 @@ static void	ps_manymoves(t_push *swp, t_move *lst)
 		ps_mediane_a(swp, lst, swp->fina[(lst->moves / 2) + (swp->a_nbr - lst->moves) + 1]);
 		while (lst->next)
 			lst = lst->next;
-//		puts("APRES MEDIANE SUR A");
-//		ps_print(swp);
-//		ps_printmoves(lst);
 	}
 }
 
@@ -110,16 +98,14 @@ void		ps_round2(t_push *swp, t_move *lst)
 
 	while (lst->next)
 		lst = lst->next;
-	while (lst->nb != 0)
-		// && (!(ps_quick_check(swp) == 0 && swp->b_nbr == 0)))
+	while (lst->nb >= 0 && !(swp->b_nbr == 0 && ps_quick_check(swp) == 0))
 	{
+		ps_print(swp);
 		while (lst->next)
 			lst = lst->next;
 		if (lst->moves <= 3)
 		{
 			ps_order_b(swp, lst);
-			puts("APRES PTIT TRI DE B VERS A");
-			ps_print(swp);
 			if (lst->prev)
 			{
 				old = lst;
@@ -127,11 +113,13 @@ void		ps_round2(t_push *swp, t_move *lst)
 				free(old);
 				lst->next = NULL;
 			}
-			ps_printmoves(lst);
+			else
+				lst->moves = 0;
 		}
 		else
 			ps_manymoves(swp, lst);
 		if (lst->nb == 0 && lst->moves == 0)
 			return ;
 	}
+	ps_print(swp);
 }

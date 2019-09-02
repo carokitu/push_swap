@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 19:23:49 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/22 19:24:08 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 12:35:30 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int				ps_read(t_push *all)
 			return (1);
 		}
 		free(line);
-		ps_print(all);
 	}
 	if (ps_checkorder(all->a_tab, all->a_nbr, all->b_nbr) == 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 16:39:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/29 12:05:06 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 12:33:52 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ static void	init_and_check(int size, char **arg)
 		free(swp);
 		return ;
 	}
-	puts("TOUT DEBUT");
-	ps_print(swp);
 	ps_round1(swp);
 	if (swp->a_tabon)
 		free(swp->a_tab);

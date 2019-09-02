@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 14:41:07 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 17:20:44 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 13:39:33 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static int			ps_main(int size, char **argv)
 		free(all);
 		return (1);
 	}
-	ps_print(all);
 	ps_read(all);
+	ps_print(all);
 	if (all->b_tabon == 1)
 		free(all->b_tab);
 	if (all->a_tabon == 1)

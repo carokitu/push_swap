@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:14:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/31 12:30:58 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 17:30:22 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,11 @@ void		ps_round1(t_push *swp)
 	if (!(lst = (t_move *)ft_memalloc(sizeof(t_move))))
 		exit(EXIT_FAILURE);
 	ps_tmptri(swp->a_tab, swp);
+	ps_print(swp);
 	ps_firstmediane(swp, lst);
-//	puts("APRES ROUND 1 :");
-//	ps_print(swp);
-//	ps_printlist(lst);
+	puts("~~~~~~~~~~~~~~~~~");
+	ps_print(swp);
 	ps_round2(swp, lst);
-//	printf("RES : %d\n", ps_quick_check(swp));
 	free(swp->fina);
 	while (lst->next)
 		lst = lst->next;
@@ -129,4 +128,5 @@ void		ps_round1(t_push *swp)
 		free(fre);
 	}
 	free(lst);
+	ps_print(swp);
 }
