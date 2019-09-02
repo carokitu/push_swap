@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 19:52:18 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/09/02 17:29:42 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 18:01:38 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ void		ps_round2(t_push *swp, t_move *lst)
 		lst = lst->next;
 	while (lst->nb >= 0 && !(swp->b_nbr == 0 && ps_quick_check(swp) == 0))
 	{
-		ps_print(swp);
 		while (lst->next)
 			lst = lst->next;
 		if (lst->moves <= 3)
@@ -121,5 +120,4 @@ void		ps_round2(t_push *swp, t_move *lst)
 		if (lst->nb == 0 && lst->moves == 0)
 			return ;
 	}
-	ps_print(swp);
 }

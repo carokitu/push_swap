@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:14:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/09/02 17:30:22 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/02 18:01:40 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ static void	ps_ordera(t_push *swp)
 			&& swp->a_tab[swp->a_nbr] > swp->a_tab[swp->a_nbr - 2]
 			&& swp->a_tab[swp->a_nbr - 1] > swp->a_tab[swp->a_nbr - 2])
 	{
-		ft_putstr_fd("rra\nsa\n", STDOUT_FILENO);
-		ps_rra(swp);
+		ft_putstr_fd("ra\nsa\n", STDOUT_FILENO);
+		ps_ra(swp);
 		ps_sa(swp);
 	}
 	else
@@ -110,13 +110,11 @@ void		ps_round1(t_push *swp)
 	t_move	*lst;
 	t_move	*fre;
 
+	
 	if (!(lst = (t_move *)ft_memalloc(sizeof(t_move))))
 		exit(EXIT_FAILURE);
 	ps_tmptri(swp->a_tab, swp);
-	ps_print(swp);
 	ps_firstmediane(swp, lst);
-	puts("~~~~~~~~~~~~~~~~~");
-	ps_print(swp);
 	ps_round2(swp, lst);
 	free(swp->fina);
 	while (lst->next)
@@ -128,5 +126,4 @@ void		ps_round1(t_push *swp)
 		free(fre);
 	}
 	free(lst);
-	ps_print(swp);
 }
