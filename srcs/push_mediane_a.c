@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 16:08:19 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/29 19:39:08 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/12 17:43:37 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,10 @@ void		ps_mediane_a(t_push *swp, t_move *lst, int med)
 			ps_pb(swp);
 			nb++;
 		}
-		else
+		else if (bas++ >= 0)
 		{
 			ft_putstr_fd("ra\n", STDOUT_FILENO);
 			ps_ra(swp);
-			bas++;
 		}
 	}
 	lst->moves = 0;

@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 19:23:49 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/09/02 12:35:30 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/12 16:49:06 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ static void		ps_givefct(int i, t_push *all)
 	fonction[8] = ps_rra;
 	fonction[9] = ps_rrb;
 	fonction[10] = ps_rrr;
-	return (fonction[i](all));
+	fonction[i](all);
+	if (all->visu == 1)
+		ps_print(all);
+	return ;
 }
 
 static int		ps_check2(int a, t_push *all)

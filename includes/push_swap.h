@@ -6,15 +6,16 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 12:02:04 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/09/02 13:39:50 by cde-moul         ###   ########.fr       */
+/*   Updated: 2019/09/12 20:12:07 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
-# include "../libftprintf.h"
+# define BUFF_SIZE 2654
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct		s_push
 {
@@ -26,6 +27,7 @@ typedef struct		s_push
 	int				b_nbr;
 	int				b_tabon;
 	int				a_tabon;
+	int				visu;
 }					t_push;
 
 typedef struct		s_move
@@ -78,6 +80,22 @@ void				ps_round2(t_push *swp, t_move *lst);
 void				ps_order_b(t_push *swp, t_move *lst);
 void				ps_order_a(t_push *swp, t_move *lst);
 void				ps_mediane_a(t_push *swp, t_move *lst, int med);
+
+/*
+**		LIB
+*/
+
+int					ft_strcmp(const char *s1, const char *s2);
+int					get_next_line(const int fd, char **line);
+size_t				ft_strlen(const char *str);
+void				*ft_memalloc(size_t size);
+void				ft_putnbr(int n);
+void				ft_putstr(char const *s);
+void				ft_putstr_fd(char const *s, int fd);
+void				ft_putchar(char c);
+char				*ft_strcpy(char *dst, const char *src);
+char				*ft_strdup(const char *s1);
+
 
 /*
 **		USING PRINTF
