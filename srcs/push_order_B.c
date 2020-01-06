@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 15:42:48 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/30 14:21:32 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/06 12:43:31 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,19 +110,8 @@ void		ps_order_b(t_push *swp, t_move *lst)
 		ft_putstr_fd("pa\n", STDOUT_FILENO);
 		ps_pa(swp);
 	}
-	else if (nb == 2 && swp->b_tab[swp->b_nbr] > swp->b_tab[swp->b_nbr - 1])
-	{
-		ft_putstr_fd("pa\npa\n", STDOUT_FILENO);
-		ps_pa(swp);
-		ps_pa(swp);
-	}
 	else if (nb == 2)
-	{
-		ft_putstr_fd("sb\npa\npa\n", STDOUT_FILENO);
-		ps_sb(swp);
-		ps_pa(swp);
-		ps_pa(swp);
-	}
+		ps_order_b_deux(swp);
 	else if (nb == 3)
 		ps_orderb(swp);
 }

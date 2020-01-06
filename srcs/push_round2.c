@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 19:52:18 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/09/02 18:01:38 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/06 12:46:39 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ static void	ps_manymoves(t_push *swp, t_move *lst)
 			lst = lst->prev;
 		while (lst->next)
 			lst = lst->next;
-		ps_mediane_a(swp, lst, swp->fina[(lst->moves / 2) + (swp->a_nbr - lst->moves) + 1]);
+		ps_mediane_a(swp, lst, swp->fina[(lst->moves / 2) +
+			(swp->a_nbr - lst->moves) + 1]);
 		while (lst->next)
 			lst = lst->next;
 	}

@@ -6,11 +6,12 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:34:09 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/30 10:27:15 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/06 12:07:29 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void		ps_newlist(t_move *lst)
 {

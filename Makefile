@@ -6,7 +6,7 @@
 #    By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/18 13:45:49 by cde-moul          #+#    #+#              #
-#    Updated: 2019/09/12 20:12:26 by cde-moul         ###   ########.fr        #
+#    Updated: 2020/01/06 12:38:26 by cde-moul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRCS2			=	main_push.c \
 					push_round1.c \
 					push_round2.c \
 					push_order_a.c \
-					push_order_B.c \
+					push_order_b.c \
+					push_order_b_bis.c \
 					push_list.c \
 					push_tri.c \
 					push_r.c \
@@ -60,6 +61,10 @@ LIB				=	ft_memalloc.c \
 					ft_strdup.c \
 					ft_putchar.c \
 					ft_strlen.c \
+					ft_strsub.c \
+					ft_strdel.c \
+					ft_strjoin.c \
+					ft_char_in_str.c \
 					get_next_line.c
 
 OBJS1			=	$(addprefix $(OBJSDIR)/, $(SRCS1:.c=.o))
@@ -91,6 +96,7 @@ $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c $(INCLUDES)
 
 clean			:
 					rm -rf $(OBJSDIR)
+					rm -rf $(OBJLIB)
 
 fclean			:	clean
 					$(RM) $(NAME1) $(NAME2)
