@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 16:39:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2020/01/09 11:02:13 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/09 11:53:25 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ int			main(int argv, char **argc)
 	new = NULL;
 	if (argv < 2)
 		return (0);
-	if (argc[1] && ft_strcmp(argc[1], "-v") == 0)
-		new = ps_getnewstr(argc + 2);
-	else
-		new = ps_getnewstr(argc + 1);
+	new = ps_getnewstr(argc + 1);
 	while (new[i])
 		i++;
 	init_and_check(i, new);
