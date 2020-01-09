@@ -6,12 +6,11 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 15:30:10 by cde-moul          #+#    #+#             */
-/*   Updated: 2020/01/08 13:58:19 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/09 11:13:34 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static int			ps_double(t_push *all)
 {
