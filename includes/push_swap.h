@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 12:02:04 by cde-moul          #+#    #+#             */
-/*   Updated: 2020/01/06 12:39:54 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/06 17:20:44 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,26 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct				s_push
+typedef struct			s_push
 {
-	int				*b_tab;
-	int				*a_tab;
-	int				*fina;
-	int				*moves;
-	int				a_nbr;
-	int				b_nbr;
-	int				b_tabon;
-	int				a_tabon;
-	int				visu;
+	int					*b_tab;
+	int					*a_tab;
+	int					*fina;
+	int					*moves;
+	int					a_nbr;
+	int					b_nbr;
+	int					b_tabon;
+	int					a_tabon;
+	int					visu;
 }						t_push;
 
-typedef struct	s_move
+typedef struct			s_move
 {
-	struct s_move	*prev;
-	struct s_move	*next;
-	int		nb;
-	int		moves;
-}			t_move;
+	struct s_move		*prev;
+	struct s_move		*next;
+	int					nb;
+	int					moves;
+}						t_move;
 
 /*
 **		CHECKER AND PUSH
@@ -56,22 +56,22 @@ void					ps_rra(t_push *all);
 void					ps_rrb(t_push *all);
 void					ps_rrr(t_push *all);
 void					ps_freesave(char **save, int to_free);
-int					ps_putintab(t_push *all, char **argv, int size);
+int						ps_putintab(t_push *all, char **argv, int size);
 
 /*
 **		CHECKER
 */
 
-int					ps_read(t_push *all);
-int					ps_checkorder(int *tab, int size,
-					int b);
+int						ps_read(t_push *all);
+int						ps_checkorder(int *tab, int size,
+						int b);
 
 /*
 **		PUSH_SWAP
 */
 
-int					ps_quick_check(t_push *swp);
-int					ps_checkb(t_push *swp, int i);
+int						ps_quick_check(t_push *swp);
+int						ps_checkb(t_push *swp, int i);
 void					ps_round1(t_push *swp);
 void					ps_newlist(t_move *list);
 void					ps_firstlist(t_move *lst);
@@ -82,13 +82,14 @@ void					ps_order_b(t_push *swp, t_move *lst);
 void					ps_order_b_deux(t_push *swp);
 void					ps_order_a(t_push *swp, t_move *lst);
 void					ps_mediane_a(t_push *swp, t_move *lst, int med);
+void					ps_mediane_b(t_push *swp, t_move *lst);
 
 /*
 **		LIB
 */
 
-int					ft_strcmp(const char *s1, const char *s2);
-int					get_next_line(const int fd, char **line);
+int						ft_strcmp(const char *s1, const char *s2);
+int						get_next_line(const int fd, char **line);
 size_t					ft_strlen(const char *str);
 size_t					ft_char_in_str(char *str, char c);
 void					*ft_memalloc(size_t size);
@@ -100,10 +101,10 @@ void					ft_strdel(char **as);
 char					*ft_strcpy(char *dst, const char *src);
 char					*ft_strdup(const char *s1);
 char					*ft_strsub(char const *s, unsigned int start,
-					size_t len);
+						size_t len);
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strsub(char const *s, unsigned int start,
-					size_t len);
+						size_t len);
 
 /*
 **		USING PRINTF

@@ -6,7 +6,7 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:14:26 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/09/02 18:01:40 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/08 17:26:56 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,6 @@ void		ps_round1(t_push *swp)
 	t_move	*lst;
 	t_move	*fre;
 
-	
 	if (!(lst = (t_move *)ft_memalloc(sizeof(t_move))))
 		exit(EXIT_FAILURE);
 	ps_tmptri(swp->a_tab, swp);

@@ -6,11 +6,12 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 15:30:10 by cde-moul          #+#    #+#             */
-/*   Updated: 2019/07/27 19:37:38 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/08 13:58:19 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include <stdio.h>
 
 static int			ps_double(t_push *all)
 {
@@ -45,7 +46,8 @@ static long	long	ps_atoi(char *str)
 			sign = -1;
 		i++;
 	}
-	while ((str[i] >= '0') && (str[i] <= '9'))
+	while ((str[i] >= '0') && (str[i] <= '9')
+		&& ((res <= 2147483647) || (res <= 2147483648 && sign == -1)))
 	{
 		res = res * 10 + str[i] - 48;
 		i++;
