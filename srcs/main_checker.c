@@ -6,12 +6,11 @@
 /*   By: cde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 14:41:07 by cde-moul          #+#    #+#             */
-/*   Updated: 2020/01/09 11:58:26 by cde-moul         ###   ########.fr       */
+/*   Updated: 2020/01/09 14:04:27 by cde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static int			ps_main(int size, char **argv, int visu)
 {
